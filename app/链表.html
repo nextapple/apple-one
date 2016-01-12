@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>循环链表练习</title>
+    </head>
+    <body>
+
+        <script src="../js/cycleList.js"></script>
+        <script>
+            /*
+             *
+            */
+            var citeArray=["Conwary","Russelliville","Carlisle","Alma"];
+            var cities=new LList();
+            citeArray.forEach(function(item,index){
+                if(+index===0){
+                    cities.insert(item,"head");
+                }else {
+                    cities.insert(item,citeArray[index-1])
+                }
+            });
+
+            cities.display();
+            var findNode=cities.find("unvalid");
+            cities.advance(2);
+            console.log(cities.length());
+
+        </script>
+    </body>
+</html>

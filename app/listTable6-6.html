@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>公元1世纪犹太战争中的一次自杀方案</title>
+    <style>
+        fieldset {
+            width:450px;
+            margin:25px auto;
+            padding:15px;
+        }
+        p{
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <fieldset>
+        <legend>事件起源：</legend>
+        <p>
+            传说在公元1世纪犹太战争中，犹太历史学家弗拉维奥.约瑟夫斯和他的40个同胞被罗马士兵包围。犹太士兵决定宁可自杀也不做俘虏，于是商量出了一个自杀方案。他们围成一个圆，从一个人开始，数到第三人时将第三个人杀死，然后再数，直到杀死所有人。约瑟夫和另外一个决定不参加这个疯狂的游戏，他们快速的计算出两个位置，站在那里得以幸存。
+        </p>
+    </fieldset>
+    <fieldset>
+        <legend>问题：</legend>
+        <p>
+            写一段程序将n个人围成一圈，并且第m个人会被杀掉，计算一圈人中哪两个人最后会存活。使用循环链表解决问题。
+        </p>
+        <p>
+            <label for=""></label>
+        </p>
+        <form action="">
+            <p><label for="">几个人围成一圈?</label> <input type="text" class="lastSum"></p>
+            <p><label for="">第几个人会被杀掉?</label> <input type="text" class="spacingNum"></p>
+            <input type="button" value="事件最后的幸存者名单">
+        </form>
+        
+        <p class="theEnd"></p>
+    </fieldset>
+    <script src="../js/cycleList-foot.js"></script>
+    <script src="../js/survivor.js">
+           // coupling inline and external scripts [耦合行内和外围script] 
+/*          var displayPad=document.querySelector(".theEnd"); 
+            var activeBtn=document.querySelector("input[type='button']");
+
+            activeBtn.onclick=function() {
+                var sum=+document.querySelector(".lastSum").value || 41;
+                var spacingNum=+document.querySelector(".spacingNum").value || 3;
+                
+                var nodeList=survive(sum,spacingNum);
+                displayPad.innerHTML="";
+                for(var initialValue in nodeList) {
+                    var itemIndex=(+initialValue)+1;
+                    displayPad.innerHTML+="幸存者"+itemIndex+"号："+nodeList[initialValue]+"<br/>";
+                }
+               
+            }*/
+           
+    </script>
+<script>
+    window.onload=function(){
+       var displayPad=document.querySelector(".theEnd"); 
+        var activeBtn=document.querySelector("input[type='button']");
+
+        activeBtn.onclick=function() {
+            var sum=+document.querySelector(".lastSum").value || 41;
+            var spacingNum=+document.querySelector(".spacingNum").value || 3;
+            
+            var nodeList=survive(sum,spacingNum);
+            displayPad.innerHTML="";
+            for(var initialValue in nodeList) {
+                var itemIndex=(+initialValue)+1;
+                displayPad.innerHTML+="幸存者"+itemIndex+"号："+nodeList[initialValue]+"<br/>";
+            }
+           
+        }
+    }
+
+ </script>
+</body>
+</html>
